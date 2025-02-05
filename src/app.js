@@ -30,8 +30,8 @@ app.use(elkRouter)
 https
 .createServer(
 {
-    cert: fs.readFileSync("/etc/letsencrypt/live/yellow-api-gateway.southeastasia.cloudapp.azure.com/fullchain.pem"),
-    key: fs.readFileSync("/etc/letsencrypt/live/yellow-api-gateway.southeastasia.cloudapp.azure.com/privkey.pem")
+    cert: fs.readFileSync("/etc/letsencrypt/live/api-gateway-testing.southeastasia.cloudapp.azure.com/fullchain.pem"),
+    key: fs.readFileSync("/etc/letsencrypt/live/api-gateway-testing.southeastasia.cloudapp.azure.com/privkey.pem")
 },
 app
 )

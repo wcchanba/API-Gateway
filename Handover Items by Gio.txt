@@ -1,0 +1,119 @@
+=== Install Node JS ===
+- Open nodejs.org 
+- download Latest Features
+
+=== Node JS docs ===
+- Open nodejs.org
+
+========= AFTER INSTALL =========
+=== check Node version ===
+- node -v
+- example response > v11.0.0
+
+=== check NPM version ===
+- npm -v
+- example response > 11.0.0
+
+=== initialize NPM ===
+- npm init
+
+=== install NPM package ===
+- npm i [package name@version]
+
+=== Download all NPM packages ===
+- npm install
+
+=== run Node file ===
+- open command prompt
+- move to the file folder or
+- input > node [file name] > node test.js
+
+=== run Nodemon (live file change) ===
+- nodemon [filename]
+
+=== Install Mongo DB Windows ===
+- Open mongodb.com
+- Products > Community Edition > Community Server
+
+=== Install Mongo DB on Ubuntu ===
+https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+
+=== Start Mongo DB Server Windows ===
+- "C:\Gio\mongodb\bin\mongod.exe" --dbpath="c:\Gio\mongodb-data"
+
+=== Start Mongo DB Server Ubuntu ===
+- systemctl start mongod
+
+=== Stop Mongo DB ===
+- systemctl stop mongod
+
+=== Restart Mongo DB ===
+- systemctl restart mongod
+
+=== Start MongoDB automatically on system reboot ===
+- systemctl enable mongod
+
+=== Install Robo 3T (GUI) ===
+- Open robomongo.org
+- download latest free product
+
+=== install NPM Forever (to run node service in the background) ===
+- npm install -g forever
+
+=== start app as a service ===
+- forever start src/app.js
+
+=== list all running processes ===
+- forever list
+
+=== stop running process ===
+- forever stop 0
+
+=== restart running process ===
+- forever restart 0
+
+========================
+NPM bcrypt.js library
+> to securely store password
+
+=========================================
+CREDS LOCAL
+vizzioadmin
+P@ssw0rd1234
+u1S6gvKo7vBqx3ZqB8lS
+
+cfceyadmin
+P@ssw0rd1234
+ogPW0SGoE9KkK9gHYytw
+
+CREDS EY Azure
+vizzioadmin
+P@ssw0rd1234
+AEhwqdn10BsNyYdyuRnF
+
+cfceyadmin
+P@ssw0rd1234
+hNMd4l2iXRQUhHBMs2QH
+
+=========================================
+CERTBOT
+cert expired: 2023-10-03
+/etc/letsencrypt/live/yellow-api-gateway.southeastasia.cloudapp.azure.com/fullchain.pem
+/etc/letsencrypt/live/yellow-api-gateway.southeastasia.cloudapp.azure.com/privkey.pem
+
+=== Categories ===
+Energy as a Service
+- Changi DCS
+- Biopolis DCS
+- Mediapolis DCS
+- Woodlands DCS
+- ONC
+
+Power & Renewables
+- KMC
+
+Enviromental
+- KSTP
+
+Water Services
+- UPNP

@@ -1,0 +1,157 @@
+Install Express.js and nodejs in Ubuntu 20.04
+
+1. Update System Packages:
+   - Open a terminal on your Ubuntu machine and run the following command to update the system packages:
+     ```
+     sudo apt update
+     ```
+2. Install Node.js:
+   - Once the system is updated, run the following command to install Node.js and npm (Node Package Manager):
+     ```
+     sudo apt install nodejs npm
+     ```
+
+3. Verify the Installation:
+   - To verify that Node.js and npm were installed successfully, run the following commands to check their versions:
+     ```
+     node --version
+     npm --version
+     ```
+	*npm (node package manager)
+
+4. To switch between node version (node version manager)
+	- install nvm
+	- use this command: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+	- command: nvm install <version>
+
+5. Install Express.js package for npm
+	- npm install -g express
+	- refer to here for full steps: https://docs.vultr.com/installing-node-js-and-express-on-ubuntu-20-04
+
+6. Install MongoDB
+	- refer to here for full steps and troubleshooting: 
+	- https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/ & https://www.mongodb.com/docs/manual/reference/installation-ubuntu-community-troubleshooting/#std-label-install-ubuntu-troubleshooting
+
+Reference: https://www.simplilearn.com/tutorials/nodejs-tutorial/introduction-to-install-express-js
+Note: To install express.js, need to install node.js first as the pre-requisites because express.js is a web application framework of node.js. Node.js is an engine to run the app.
+
+7. Run node.js
+	- command show node is listening to port 3000, but cant display yet on web
+	- solution: open port 3000 in Azure testlab (this is working)
+
+8. use winscp to find the code from old server (opt/elk-api gateway/), then copy n paste in personal github, then use git to push to new server
+
+9. Push code from laptop directory to github
+	Steps: 
+	1. Install git.exe in laptop
+	2. Open the source code folder using Git Bash
+	3. git init
+	4. git remote add origin https://github.com/simzicing/VizzioAPIGateway.git
+	5. git add . (add whole files into repo)
+	6. git commit -m 'your_message' 
+	7. git push -u origin master
+
+**error faced when try to psh code into github:
+	- unable to access 'https://github.com/simzicing/VizzioAPIGateway.git/': SSL certificate problem: unable to get local issuer certificate
+	- solution: https://stackoverflow.com/questions/23885449/unable-to-resolve-unable-to-get-local-issuer-certificate-using-git-on-windows 
+	- put this command first: git config --global http.sslVerify false
+	- then: git config --global http.sslVerify true
+
+10. Pull code from github to new API server
+	Steps:
+	1. Install git in Ubuntu
+	2. git config --global user.name "Your_Name"
+	3. git config --global user.email "email_address@domain.com"
+	4. git clone https://github.com/simzicing/VizzioAPIGateway.git
+	5. git pull origin master
+	6. cd VizzioAPIGateway
+	7. ls > to verify if output is here
+	****
+	8. git status > to check if the branch switch, the pull request completed etc
+	9. git switch <branch name> > if branch doesnt change
+
+11. To switch the nvm version & set default
+	- nvm ls (to see the current version)
+	- nvm use <version>
+	- nvm alias default <version>
+
+12. To install another version npm
+	- npm install -g npm@<version>
+
+13. To install forever
+	- sudo npm install forever -g
+
+14. use sudo -i to switch to root account
+
+15. if certbot cannot be renewed, error message: Problem binding to port 80: Could not bind to IPv4 or IPv6..Skipping..
+	- this error means here's already a web server software running, so stop your Apache or nginx or etc and try again
+	- run sudo systemctl stop nginx
+
+16. to check what is using port 443 if got this error:
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1925:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 443
+}
+
+run this:
+
+	- sudo lsof -i :443
+	- sudo kill -9 <PID>
+
+======================================================================================================
+npm registry login:
+adminapigateway
+Admin@pi4321
+
+new API gateway server:
+adminapigateway
+P@ssw0rd1234
+20.205.176.198
+http://test-api-gateway.southeastasia.cloudapp.azure.com:3000
+
+Cloud ASC 
+ID: ZiCing.Sim@cloudasc.net
+pwd: Zc$im2024
+
+=======================================================
+New (in ACS):
+Kibana server
+20.212.233.53
+root
+P@ssw0rd1234
+
+Elastic server
+https://test-elastic.southeastasia.cloudapp.azure.com:9200
+20.197.88.3
+azureuser
+P@ssw0rd1234
+
+Kibana Dashboard (Web UI)
+https://test-elk.southeastasia.cloudapp.azure.com:5601/
+elastic
+P@ssw0rd1234
+
+=========================================================================================
+How's Bearer Token works in API gateway
+1. the token never expired coz it doesnt mention the claim 'exp' in the script
+2. checked the previous implementation, the token has been used for 1 year and it's still active
+
+excel password: CFCey@2024
+
+
+
+
+
+
+
+
+
+
+
+
+

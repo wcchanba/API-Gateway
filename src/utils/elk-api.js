@@ -5,9 +5,12 @@ const request = require('request')
 const { isUndefined } = require('util')
 
 const caPath = path.join(__dirname, '../ca/elasticsearch-ca.pem')
-const url = 'https://red-elk.southeastasia.cloudapp.azure.com:9200'
+// const url = 'https://red-elk.southeastasia.cloudapp.azure.com:9200'
+// const username = 'elastic'
+// const password = 'P@ssw0rd1234'
+const url = 'https://elastic-server-testing.southeastasia.cloudapp.azure.com:9200'
 const username = 'elastic'
-const password = 'P@ssw0rd1234'
+const password = 'P@ssw0rdP@ssw0rd'
 
 const options = {
   baseUrl: url,
